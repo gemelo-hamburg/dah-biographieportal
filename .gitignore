@@ -13,6 +13,11 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+.png
+.jpeg
+.otf
+
+
 # Mono auto generated files
 mono_crash.*
 
@@ -360,3 +365,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+*.otf
+Resources/Fonts/Helvetica.ttf
