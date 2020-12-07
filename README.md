@@ -17,6 +17,7 @@ Biographieportal für das Deutsche Auswandererhaus in Bremerhaven
 
 # Kurzbeschreibung
 
+Diese auf Basis von c#/WPF/XAML errichtete .net 4.8 Applikation ermöglicht dem Deutschen Auswandererhaus die Darstellung eines multimedia Exponats mit folgendem Zweck:
 
 Anhand von Fotos, Texten und Videos können Sie hier einen Einblick in ganz persönliche Aus- und Einwanderungsgeschichten gewinnen
 			
@@ -34,6 +35,10 @@ Das Projekt museum4punkt0 wird gefördert durch die Beauftragte der Bundesregier
 Weitere Informationen: [museum4punkt0](www.museum4punkt0.de)
 
 # Installation
+
+Die Software läuft auf einem handelsüblichen PC unter dem Betriebssystem Microsoft Windows 10. Sie benötigt das Microsoft .net Framework 4.8. An die Hardware werden keine speziellen Anforderungen gestellt, am rechnenintensivsten ist die Darstellung von Videos.
+
+
 
 # Benutzung/Usage
 
