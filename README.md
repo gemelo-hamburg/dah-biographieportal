@@ -70,7 +70,7 @@ Hier müssen die Medienfiles wie Bilder, Videos, Audios abgelegt sein.
 Siehe nächster Absatz.
 
 
-## eigentliche Inhalte
+## Eigentliche Inhalte
 Die eigentlichen Inhalte bestehen im wesentlichen aus einer selbsterklärenden Excel Datei (siehe Ordner Example Content).
 
 Diese besteht aus ein 6 Tabellen:
@@ -88,6 +88,13 @@ Es können die Typen Teaser, Image und Movie folgen, in der jeweils beschreibend
 Nach Programmstart und Begrüßungsbildschirm wird dem Besucher eine umfangreiche Liste mit allen Biographie angezeigt. Diese kann der Besucher wie oben beschrieben über die Filter eingrenzen. Innerhalb der Biographie können weitere passenden Biographien verlinkt sein.
 
 Der Besucher hat außerdem die Möglichkeit, über ein Formular eine eigene Geschichte zu hinterlegen und um Kontaktaufnahme zu bitten.
+
+![Beispielbild 001]/ExampleScreenshots/001.jpg
+![Beispielbild 002]/ExampleScreenshots/002.jpg
+![Beispielbild 003]/ExampleScreenshots/003.jpg
+
+
+
 
 # Credits
 
