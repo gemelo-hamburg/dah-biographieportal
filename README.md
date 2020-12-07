@@ -51,13 +51,13 @@ jeweils mit den Schriftschnitten Bold, Italic und Light.
 ## Einstellungen
 In der .settings Datei können folgende Einstellungen vorgenommen werden:
 
-* 'RestartInteval'
+* `RestartInteval`
 Intervall als Timespan, nach der das Exponat bei Nichtbenutzung in den Timeout geht und die Startseite anzeigt.
 
-* 'VisitorMessagesPath'
+* `VisitorMessagesPath`
 Pfad zu dem geschützten Dateinbereich, unter der die Geschichten der Besucher abgelegt werden.
 
-* 'ContentDataPath'
+* `ContentDataPath`
 Pfad zu den eigentlichen Inhalten. Siehe nächster Absatz.
 
 
