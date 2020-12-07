@@ -89,10 +89,20 @@ Nach Programmstart und Begrüßungsbildschirm wird dem Besucher eine umfangreich
 
 Der Besucher hat außerdem die Möglichkeit, über ein Formular eine eigene Geschichte zu hinterlegen und um Kontaktaufnahme zu bitten.
 
+#### Beispielhafte Darstellung nach ähnlichen Biographien
 ![Beispielbild 001](/ExampleScreenshots/001.jpg)
+
+#### Beispielhafte Darstellung nach der Migrationsart "Auswanderung"
 ![Beispielbild 002](/ExampleScreenshots/002.jpg)
+
+#### Formular zur Einreichung eigener Geschichten
 ![Beispielbild 003](/ExampleScreenshots/003.jpg)
 
+#### beispielhafte Darstellung eines Inhalts
+![Beispielbild 006](/ExampleScreenshots/006.jpg)
+
+#### Detailsansicht
+![Beispielbild 007](/ExampleScreenshots/007.jpg)
 
 
 
