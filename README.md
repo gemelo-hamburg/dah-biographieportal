@@ -58,14 +58,36 @@ Intervall als Timespan, nach der das Exponat bei Nichtbenutzung in den Timeout g
 Pfad zu dem geschützten Dateinbereich, unter der die Geschichten der Besucher abgelegt werden.
 
 * `ContentDataPath`
-Pfad zu den eigentlichen Inhalten. Siehe nächster Absatz.
+Pfad zu den eigentlichen Inhalten. 
+Hier müssen zwei Ordner angelegt sein
+
+1. `ContentDefinition`
+Hier muss sich eine Excel Datei (xlsx) mit den eigentlichen Texten und Metadaten befinden.
+
+2. `Media`
+Hier müssen die Medienfiles wie Bilder, Videos, Audios abgelegt sein.
+
+Siehe nächster Absatz.
 
 
 ## eigentliche Inhalte
-Die eigentlichen Inhalte
+Die eigentlichen Inhalte bestehen im wesentlichen aus einer selbsterklärenden Excel Datei (siehe Ordner Example Content).
+
+Diese besteht aus ein 6 Tabellen:
+
+Der Haupttabelle und 5 relational verknüpften Untertabellen, in der Zeiträume, Migrationsarten, Migrationsgründe, Folgen und Historische Hintergründe definiert werden. Nach diesen kann der Besucher filtern.
+
+In der Haupttabelle werden die Daten sequentiell aufgelistet.
+
+Am Anfang eines Eintrages wird der Typ ´meta´ definiert. Hier erfolgen relationale Verknpüfungen auf die jeweiligen Untertabellen.
+
+Es können die Typen Teaser, Image und Movie folgen, in der jeweils beschreibende Texte und die Dateinamen definiert sind.
 
 
 # Benutzung/Usage
+Nach Programmstart und Begrüßungsbildschirm wird dem Besucher eine umfangreiche Liste mit allen Biographie angezeigt. Diese kann der Besucher wie oben beschrieben über die Filter eingrenzen. Innerhalb der Biographie können weitere passenden Biographien verlinkt sein.
+
+Der Besucher hat außerdem die Möglichkeit, über ein Formular eine eigene Geschichte zu hinterlegen und um Kontaktaufnahme zu bitten.
 
 # Credits
 

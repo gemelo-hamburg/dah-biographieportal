@@ -18,6 +18,10 @@
 *.jpg
 *.otf
 
+!ExampleScreenshots/00*.jpg
+
+
+
 
 # Mono auto generated files
 mono_crash.*

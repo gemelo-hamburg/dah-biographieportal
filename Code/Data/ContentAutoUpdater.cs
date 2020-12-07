@@ -84,7 +84,7 @@ namespace Gemelo.Applications.Biographieportal.Code.Data
                     {
                         DeleteObsoleteFiles = true,
                         DeleteObsoleteDirectoriesAndFiles = true,
-                        RemoteReadOnlyFlag = true,
+                        RemoveReadOnlyFlag = true,
                         IgnoreDeleteExceptions = true,
                         IgnoreUpdateExceptions = true,
                     };
