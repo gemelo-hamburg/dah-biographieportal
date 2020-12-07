@@ -36,7 +36,16 @@ Weitere Informationen: [museum4punkt0](www.museum4punkt0.de)
 
 # Installation
 
+## Hardware / Betriebssystem
 Die Software läuft auf einem handelsüblichen PC unter dem Betriebssystem Microsoft Windows 10. Sie benötigt das Microsoft .net Framework 4.8. An die Hardware werden keine speziellen Anforderungen gestellt, am rechnenintensivsten ist die Darstellung von Videos.
+
+## Schriften
+Folgende Schriftarten müssen auf dem PC installiert sein:
+* Helvetica
+* Weissenhof Grotesk
+
+jeweils mit den Schriftschnitten Bold, Italic und Light.
+
 
 
 
