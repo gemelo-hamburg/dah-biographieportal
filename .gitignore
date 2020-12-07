@@ -19,6 +19,7 @@
 *.otf
 
 !ExampleScreenshots/00*.jpg
+!ExampleContent/Media/*.jpeg
 
 
 
