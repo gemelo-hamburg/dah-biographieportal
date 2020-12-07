@@ -14,7 +14,7 @@ Biographieportal für das Deutsche Auswandererhaus in Bremerhaven
 
 1. [Lizenz](#lizenz)
 
-1. [Projektpartner](#projektpartner)
+1. [Credits / Projektpartner](#creditsprojektpartner)
 
 
 # Kurzbeschreibung
@@ -107,9 +107,6 @@ Der Besucher hat außerdem die Möglichkeit, über ein Formular eine eigene Gesc
 ![Beispielbild 007](/ExampleScreenshots/007.jpg)
 
 
-# Credits
-tbd.
-
 
 # Lizenz
 Copyright © 2019/2020, gemelo GmbH, Hamburg, Germany
@@ -125,7 +122,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-# Projektpartner
+# Credits/Projektpartner
 
 Diese Anwendung ist entstanden im Verbundprojekt museum4punkt0 – Digitale Strategien für das Museum der Zukunft, Teilprojekt "Deutsches Auswandererhaus". Weitere Informationen: www.museum4punkt0.de.
 
