@@ -1,0 +1,175 @@
+﻿<UserControl 
+    x:Class="Gemelo.Applications.Biographieportal.Controls.Headers.Header"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:wpfex="http://schema.pete.de/components/wpfex"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:Controls="clr-namespace:Gemelo.Applications.Biographieportal.Controls"  
+    xmlns:local="clr-namespace:Gemelo.Applications.Biographieportal.Controls.Headers"
+    xmlns:localization="clr-namespace:Pete.Components.WpfExtensions.Localization;assembly=pete.WpfExtensions"
+    mc:Ignorable="d" 
+    Width="1920" 
+             Height="1080"
+    >
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Gemelo.Biographieportal;component/Resources/Styles/TextStyles.xaml" />
+                <ResourceDictionary Source="/Gemelo.Biographieportal;component/Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="/Gemelo.Biographieportal;component/Resources/Styles/Buttons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style
+                x:Key="TextStyle_Button"
+                BasedOn="{StaticResource TextStyle_Default}"
+                TargetType="TextBlock" >
+                <Setter Property="FontSize" Value="23" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="Grid.Row" Value="1" />
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+
+        <Grid 
+            x:Name="m_GridCategorySliders"/>
+
+        <Grid
+            VerticalAlignment="Top"
+            Height="165">
+
+            <Border
+                Background="{StaticResource BrushRed}">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="15"/>
+                </Border.Effect>
+            </Border>
+
+            <!--<Image
+            VerticalAlignment="Top"
+            Height="2080"
+            Width="1920"
+            Opacity=".1"
+            Grid.RowSpan="8"
+            Grid.ColumnSpan="5"
+            x:Name="m_ImgExample" Source="/Gemelo.Biographieportal;component/Resources/Images/Example/contentlist.png"
+            />-->
+
+
+            <wpfex:TouchButton
+                HorizontalAlignment="Left"
+                Click="BtnHome_Click"
+                x:Name="m_BtnHome"
+                Margin="50,30,50,10"
+                Style="{StaticResource StyleBorderlessButton}" d:IsLocked="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Image 
+                    Source="/gemelo.Biographieportal;component/Resources/Images/HomeButton.png"/>
+                    <TextBlock
+                    Style="{StaticResource TextStyle_Button}">
+                    
+                    <localization:Localization.TextDe>
+                        HOME
+                    </localization:Localization.TextDe>
+                    <localization:Localization.TextEn>
+                        HOME
+                    </localization:Localization.TextEn>
+                    HOME
+                    </TextBlock>
+                </Grid>
+            </wpfex:TouchButton>
+            <wpfex:TouchButton
+            HorizontalAlignment="Left"
+            Click="BtnBack_Click"
+            x:Name="m_BtnBack"
+            Margin="162,30,0,10"
+            Style="{StaticResource StyleBorderlessButton}" Width="112">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Image 
+                    Source="/gemelo.Biographieportal;component/Resources/Images/BackButton.png"/>
+                    <TextBlock
+                    Style="{StaticResource TextStyle_Button}">
+                    
+                    <localization:Localization.TextDe>
+                        ZURÜCK
+                    </localization:Localization.TextDe>
+                    <localization:Localization.TextEn>
+                        BACK
+                    </localization:Localization.TextEn>
+                    ZURÜCK
+                    </TextBlock>
+                </Grid>
+            </wpfex:TouchButton>
+
+            <Controls:DahButton 
+                Clicked="BtnMigrationTypes_Clicked"
+                TextDe="Migrationsarten"
+                FireClickAtTouchDown="False"
+                TextEn="Migrationstypes"
+                FontSize="23"
+                ButtonBackground="{StaticResource BrushRed}"
+                Margin="403,51,1251,19" />
+            <Controls:DahButton 
+                Clicked="BtnMigrationReasons_Clicked"
+                FireClickAtTouchDown="False"
+                TextDe="vor der Migration"
+                TextEn="before the Migrations"
+                FontSize="23"
+                ButtonBackground="{StaticResource BrushOrange}"
+                Margin="693,51,0,19" />
+            <Controls:DahButton 
+                Clicked="BtnMigrationEffects_Clicked"
+                FireClickAtTouchDown="False"
+                TextDe="nach der Migration"
+                TextEn="after the Migration"
+                FontSize="23"
+                ButtonBackground="{StaticResource BrushBlue}"
+                Margin="990,51,0,19" Width="257" />
+            <Controls:DahButton 
+                Clicked="BtnTimeRanges_Clicked"
+                FireClickAtTouchDown="False"
+                TextDe="Zeiträume"
+                TextEn="Time Ranges"
+                FontSize="23"
+                ButtonBackground="{StaticResource BrushGrey}"
+                Margin="1315,51,405,19" />
+            <wpfex:TouchButton
+                HorizontalAlignment="Left"
+                FireClickAtTouchDown="False"
+                Click="BtnOwnStory_Click"
+                x:Name="m_BtnOwnStory"
+                Margin="1734,30,0,10"
+                Style="{StaticResource StyleBorderlessButton}" Width="176">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Image 
+                    Source="/Gemelo.Biographieportal;component/Resources/Images/OwnStoryButton.png"/>
+                    <TextBlock
+                    TextAlignment="Center"
+                    Style="{StaticResource TextStyle_Button}"><localization:Localization.TextDe>MEINE[br/]GESCHICHTE</localization:Localization.TextDe>
+                    <localization:Localization.TextEn>MY[br/]STORY</localization:Localization.TextEn>
+                    <Run Text="MEINE"/><LineBreak/><Run Text="GESCHICHTE"/></TextBlock>
+                </Grid>
+            </wpfex:TouchButton>
+        </Grid>
+
+    </Grid>
+</UserControl>

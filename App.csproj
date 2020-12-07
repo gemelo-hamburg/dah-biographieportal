@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{71F022AB-0EE7-4B3C-AF4D-7D064DDFCCBB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Gemelo.Applications.Biographieportal</RootNamespace>
+    <AssemblyName>Gemelo.Biographieportal</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>false</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.94.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\NugetPackages\ClosedXML.0.94.2\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.9.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\NugetPackages\DocumentFormat.OpenXml.2.9.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.7.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\NugetPackages\ExcelNumberFormat.1.0.7\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\NugetPackages\FastMember.1.5.0\lib\net461\FastMember.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\NugetPackages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\NugetPackages\System.IO.Packaging.4.7.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Applications\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\BioMediaplayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ContentDetails\AdditionalParts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ContentDetails\ButtonOwnStory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ContentDetails\CategoriesDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ContentDetails\ContentDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ContentDetails\ContentImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ContentDetails\HistoricBackgroundView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ContentLists\ContentElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ContentLists\ContentList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DahButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Headers\CategoriesSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Headers\Header.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Impressum.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Intro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MediaFullscreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SendOwnStories\CheckContentMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SendOwnStories\EditBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SendOwnStories\ScreenKeyboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SendOwnStories\SendOwnStory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\Borders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\Buttons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ScrollbarsWhite.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\Scrollbars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\TextStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Applications\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\BiographyLocalizationString.cs" />
+    <Compile Include="Code\Data\BasePartialData.cs" />
+    <Compile Include="Code\Data\Biography.cs" />
+    <Compile Include="Code\Data\BiographyPart.cs" />
+    <Compile Include="Code\Data\BiographyReader.cs" />
+    <Compile Include="Code\Data\BiographyStore.cs" />
+    <Compile Include="Code\Data\ContentAutoUpdater.cs" />
+    <Compile Include="Code\Data\HistoricBackground.cs" />
+    <Compile Include="Code\Data\MediaFile.cs" />
+    <Compile Include="Code\Data\MigrationEffect.cs" />
+    <Compile Include="Code\Data\MigrationReason.cs" />
+    <Compile Include="Code\Data\MigrationType.cs" />
+    <Compile Include="Code\Data\TimeRange.cs" />
+    <Compile Include="Code\Enumerations\BiographyPartType.cs" />
+    <Compile Include="Code\Enumerations\ExcelSheetName.cs" />
+    <Compile Include="Code\Enumerations\GameState.cs" />
+    <Compile Include="Code\Enumerations\MediaContentType.cs" />
+    <Compile Include="Code\Enumerations\MediaFileType.cs" />
+    <Compile Include="Controls\BioMediaplayer.xaml.cs">
+      <DependentUpon>BioMediaplayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContentDetails\AdditionalParts.xaml.cs">
+      <DependentUpon>AdditionalParts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContentDetails\ButtonOwnStory.xaml.cs">
+      <DependentUpon>ButtonOwnStory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContentDetails\CategoriesDisplay.xaml.cs">
+      <DependentUpon>CategoriesDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContentDetails\ContentDetail.xaml.cs">
+      <DependentUpon>ContentDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContentDetails\ContentImage.xaml.cs">
+      <DependentUpon>ContentImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContentDetails\HistoricBackgroundView.xaml.cs">
+      <DependentUpon>HistoricBackgroundView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContentLists\ContentElement.xaml.cs">
+      <DependentUpon>ContentElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContentLists\ContentList.xaml.cs">
+      <DependentUpon>ContentList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DahButton.xaml.cs">
+      <DependentUpon>DahButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Headers\CategoriesSlider.xaml.cs">
+      <DependentUpon>CategoriesSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Headers\Header.xaml.cs">
+      <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Impressum.xaml.cs">
+      <DependentUpon>Impressum.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Intro.xaml.cs">
+      <DependentUpon>Intro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MediaFullscreen.xaml.cs">
+      <DependentUpon>MediaFullscreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SendOwnStories\CheckContentMessage.xaml.cs">
+      <DependentUpon>CheckContentMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SendOwnStories\EditBox.xaml.cs">
+      <DependentUpon>EditBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SendOwnStories\ScreenKeyboard.xaml.cs">
+      <DependentUpon>ScreenKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SendOwnStories\SendOwnStory.xaml.cs">
+      <DependentUpon>SendOwnStory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="Resources\Fonts\Indian Type Foundry - Weissenhof Grotesk Bold Italic.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Indian Type Foundry - Weissenhof Grotesk Bold.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Indian Type Foundry - Weissenhof Grotesk Italic.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Indian Type Foundry - Weissenhof Grotesk Lt Italic.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Indian Type Foundry - Weissenhof Grotesk Lt.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Indian Type Foundry - Weissenhof Grotesk Md Italic.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Indian Type Foundry - Weissenhof Grotesk Md.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Indian Type Foundry - Weissenhof Grotesk.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\Images\OwnStoryButton-Big.png" />
+    <Resource Include="Resources\Images\Hintergrund-neu2.png" />
+    <Resource Include="Resources\Images\Hintergrund-neu1.jpg" />
+    <Resource Include="Resources\Images\Mediaplayer\forward.png" />
+    <Resource Include="Resources\Images\Mediaplayer\pause.png" />
+    <Resource Include="Resources\Images\Mediaplayer\play.png" />
+    <Resource Include="Resources\Images\Mediaplayer\rewind.png" />
+    <Resource Include="Resources\Images\Mediaplayer\stop.png" />
+    <Resource Include="Resources\Images\Example\contentdetail.png" />
+    <Resource Include="Resources\Images\Example\contentlist.png" />
+    <Resource Include="Resources\Images\Example\intro.png" />
+    <Resource Include="Resources\Images\Example\ownstory.png" />
+    <Resource Include="Resources\Images\DownButton.png" />
+    <Resource Include="Resources\Images\background.png" />
+    <Resource Include="Resources\Images\CloseBtn.png" />
+    <Resource Include="Resources\Images\FullSizeButton.png" />
+    <Resource Include="Resources\Images\Logo.png" />
+    <Resource Include="Resources\Images\german-flag.png" />
+    <Resource Include="Resources\Images\HomeButton.png" />
+    <Resource Include="Resources\Images\OwnStoryButton.png" />
+    <Resource Include="Resources\Images\united-states-flag.png" />
+    <Resource Include="Resources\Images\BackButton.png" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Resources\Fonts\Helvetica.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Produkte\Components\ExhibitCommon\gemelo.Exhibits.csproj">
+      <Project>{a123139f-006b-4ab7-aaa5-2b13bf6bb374}</Project>
+      <Name>gemelo.Exhibits</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Produkte\Components\Extensions\pete.Extensions.csproj">
+      <Project>{8a969b68-ec07-4b38-a824-c2f607d17f99}</Project>
+      <Name>pete.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Produkte\Components\gemelo.ClosedXml.Wpf\gemelo.ClosedXml.Wpf.csproj">
+      <Project>{A775AF6C-8807-4510-A04A-1C81109598B2}</Project>
+      <Name>gemelo.ClosedXml.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Produkte\Components\gemelo.ClosedXml\gemelo.ClosedXml.csproj">
+      <Project>{5134e78c-a6b4-46a1-9b94-19845b3447dd}</Project>
+      <Name>gemelo.ClosedXml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Produkte\Components\gemelo.FileUpdate\gemelo.FileUpdate.csproj">
+      <Project>{f85995cd-3d9f-4a2b-a8a1-2e1a942cf58c}</Project>
+      <Name>gemelo.FileUpdate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Produkte\Components\WpfExtensions\pete.WpfExtensions.csproj">
+      <Project>{1021999b-f1e2-4c58-bcf3-833dbc3aa4ee}</Project>
+      <Name>pete.WpfExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Icons\gemelo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

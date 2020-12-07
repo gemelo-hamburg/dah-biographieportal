@@ -1,0 +1,9 @@
+﻿<exhibit:LocalizationExhibitApplication
+    x:Class="Gemelo.Applications.Biographieportal.Applications.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:exhibit="http://schema.gemelo.de/components/exhibits">
+    <Application.Resources>
+         
+    </Application.Resources>
+</exhibit:LocalizationExhibitApplication>

@@ -1,0 +1,359 @@
+﻿<UserControl xmlns:Controls="clr-namespace:Gemelo.Applications.Biographieportal.Controls"  
+    x:Class="Gemelo.Applications.Biographieportal.Controls.SendOwnStories.SendOwnStory"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:wpfex="http://schema.pete.de/components/wpfex"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:Gemelo.Applications.Biographieportal.Controls.SendOwnStories"
+    mc:Ignorable="d" 
+    Width="1920"
+    Height="1080"
+    >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Gemelo.Biographieportal;component/Resources/Styles/TextStyles.xaml" />
+                <ResourceDictionary Source="/Gemelo.Biographieportal;component/Resources/Styles/Borders.xaml" />
+                <ResourceDictionary Source="/Gemelo.Biographieportal;component/Resources/Styles/Buttons.xaml" />
+                <ResourceDictionary Source="/Gemelo.Biographieportal;component/Resources/Styles/Colors.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style
+                BasedOn="{StaticResource TextStyle_Default}"
+                TargetType="TextBlock">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="LineHeight" Value="29"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="FontWeight" Value="Normal"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+            </Style>
+
+            <Style TargetType="CheckBox">
+                <Setter Property="SnapsToDevicePixels" Value="true"/>
+                <Setter Property="OverridesDefaultStyle" Value="true"/>
+                <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="CheckBox">
+                            <BulletDecorator Background="Transparent">
+                                <BulletDecorator.Bullet>
+                                    <Border 
+                                        x:Name="Border" 
+                                        Width="35" Height="35" 
+                                        BorderBrush="White"
+                                        CornerRadius="2" 
+                                        BorderThickness="4">
+                                        <Path 
+                                            Width="25" 
+                                            Height="25" 
+                                            x:Name="CheckMark" 
+                                            SnapsToDevicePixels="False" 
+                                            Stroke="White" 
+                                            StrokeThickness="4" Data="M 3 10 L 11 20 22 2" />
+                                    </Border>
+                                </BulletDecorator.Bullet>
+                                <ContentPresenter 
+                                    Margin="4,0,0,0" 
+                                    VerticalAlignment="Center" HorizontalAlignment="Left" 
+                                    RecognizesAccessKey="True"/>
+                            </BulletDecorator>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="false">
+                                    <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="{x:Null}">
+                                    <Setter TargetName="CheckMark" Property="Data" Value="M 0 8 L 8 0" />
+                                </Trigger>
+                                <!--<Trigger Property="IsMouseOver" Value="true">
+                                    <Setter TargetName="Border" Property="Background" Value="#505050" />
+                                </Trigger>-->
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter TargetName="CheckMark" Property="Stroke" Value="#FF6C6C6C"/>
+                                    <Setter Property="Foreground" Value="Gray"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+
+    <Grid
+        Background="{StaticResource BrushRed }">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="70" />
+            <RowDefinition Height="70" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="350" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="3.6*" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+            Grid.Column="2"
+            FontWeight="Black"
+            FontSize="30"
+            Margin="0,10"
+            Grid.Row="0">
+            HABEN SIE AUCH ...
+        </TextBlock>
+
+        <TextBlock
+            Margin="0,0,0,0"
+            Grid.Column="2"
+            Grid.Row="1">
+            … eine Aus- oder Einwanderungsgeschichte von sich bzw. Ihrer Familie zu erzählen und möchten diese mit den dazugehörigen Objekten und Dokumenten dem
+Deutschen Auswandererhaus für seine Sammlung übergeben? So kann auch Ihre Geschichte bald Teil dieses Portals werden! Bitte geben Sie nachfolgend erste
+Informationen zu Ihrer Geschichte ein. Gerne nimmt die wissenschaftliche Abteilung des Deutschen Auswandererhauses dann Kontakt mit Ihnen auf.
+        </TextBlock>
+
+        <Grid
+            Margin="0,0,0,10"
+            Grid.Column="2"
+            Grid.Row="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <local:EditBox 
+                Margin="0,0,10,0"
+                x:Name="m_EditFirstname"
+                EditFocused="EditBox_EditFocused"
+            EditChanged="EditWhen_EditChanged"
+                Description="de:Vorname||en:Firstname"
+                Grid.Column="0"
+            />
+
+            <local:EditBox 
+                Margin="10,0,0,0"
+                x:Name="m_EditLastname"
+                EditFocused="EditBox_EditFocused"
+                EditLostFocus="EditBox_EditLostFocus"
+                           EditChanged="EditWhen_EditChanged"
+Description="de:Nachname||en:Lastname"
+                Grid.Column="1"/>
+
+        </Grid>
+
+        <local:EditBox 
+            Margin="0,0,0,10"
+            x:Name="m_EditEmail"
+            EditFocused="EditBox_EditFocused"
+            EditLostFocus="EditBox_EditLostFocus"
+            EditChanged="EditWhen_EditChanged"
+            Description="de:E-Mail||en:E-Mail"
+            Grid.Column="2"
+            Grid.Row="3" />
+
+        <TextBlock 
+            FontSize="15"
+            HorizontalAlignment="Left"
+            TextAlignment="Left"
+            Grid.Column="2"
+            Grid.Row="4">
+            Warum sind Sie bzw. warum ist Ihre Familie ein- oder ausgewandert?
+        </TextBlock>
+
+        <local:EditBox 
+            Margin="0,22,0,10"
+            x:Name="m_EditWhy"
+            EditFocused="EditBox_EditFocused"
+            EditLostFocus="EditBox_EditLostFocus"
+            EditChanged="EditWhen_EditChanged"
+            Description="de:Warum?||en:Why?"
+            Grid.Column="2"
+            Grid.Row="4" />
+
+        <TextBlock 
+            FontSize="15"
+            HorizontalAlignment="Left"
+            TextAlignment="Left"
+            Grid.Column="2"
+            Grid.Row="5">
+            Wann sind Sie bzw. wann ist Ihre Familie ein- oder ausgewandert?
+        </TextBlock>
+
+        <local:EditBox 
+            Margin="0,22,0,10"
+            x:Name="m_EditWhen"
+            EditFocused="EditBox_EditFocused"
+            EditLostFocus="EditBox_EditLostFocus"
+            EditChanged="EditWhen_EditChanged"
+            Description="de:Wann?||en:When"
+            Grid.Column="2"
+            Grid.Row="5" />
+
+        <TextBlock 
+            x:Name="m_TxtImpressum"
+            MouseDown="TxtImpressum_MouseDown"
+            TouchDown="TxtImpressum_TouchDown"
+            Margin="0,10"
+            HorizontalAlignment="Left"
+            TextAlignment="Left"
+            Grid.Column="2"
+            Grid.Row="6"><Run Text="Vielen Dank für Ihre Kontaktdaten. Bitte beachten Sie"/> <Run Text="abschließend unsere "/><Run Text="DATENSCHUTZERKLÄRUNG" TextDecorations="Underline"/>.</TextBlock>
+
+        <local:CheckContentMessage
+            x:Name="m_TxtEnterNames"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="0,0,50,0"
+            Grid.Row="2"
+            Grid.Column="4"
+            TextString="de:Bitte mindestens einen Namen angeben."/>
+
+        <!--<TextBlock
+            x:Name="m_TxtEnterNames"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="0,0,50,0"
+            Grid.Row="2"
+            Grid.Column="4">
+            mindestens einen Namen angeben.
+        </TextBlock>-->
+
+        <local:CheckContentMessage
+            x:Name="m_TxtEnterEmail"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="0,0,50,0"
+            Grid.Row="3"
+            Grid.Column="4">
+            de:Bitte eine gültige E-Mail Adresse angeben.
+        </local:CheckContentMessage>
+
+        <local:CheckContentMessage
+            x:Name="m_TxtEnterWhy"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="0,0,50,0"
+            Grid.Row="4"
+            Grid.Column="4">
+            de:Warum sind Sie bzw. warum ist Ihre Familie ein- oder ausgewandert?
+        </local:CheckContentMessage>
+        <local:CheckContentMessage
+            x:Name="m_TxtEnterWhen"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Margin="0,0,50,0"
+            Grid.Row="5"
+            Grid.Column="4">
+            de:Wann sind Sie bzw. wann ist Ihre Familie ein- oder ausgewandert?
+        </local:CheckContentMessage>
+
+        <local:CheckContentMessage
+            x:Name="m_TxtEnterAcceptImpressum"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Grid.Row="6"
+            Margin="0,0,50,0"
+            Grid.RowSpan="2"
+            Grid.Column="4">
+            de:Bitte die Datenschutz-erklärung lesen und bestätigen.
+        </local:CheckContentMessage>
+
+        <StackPanel 
+            Orientation="Horizontal"
+            Grid.Column="2"
+            Grid.Row="7">
+
+            <CheckBox
+                IsChecked="True"
+                IsThreeState="False"
+                x:Name="m_CheckAccept"
+                Checked="CheckAccept_Checked"
+                Unchecked="CheckAccept_Unchecked"
+                />
+
+            <TextBlock 
+                Margin="10,0"
+            HorizontalAlignment="Left"
+            TextAlignment="Left"
+            >
+                Ja, ich habe die Datenschutzerklärung zur Kenntnis <LineBreak/>
+genommen und willige in die Verarbeitung meiner personenbezogenen<LineBreak/>
+Daten, wie in der Datenschutzerklärung beschrieben, ein.
+            </TextBlock>
+
+        </StackPanel>
+
+        <Controls:DahButton 
+            Clicked="BtnSend_Clicked"
+            x:Name="m_BtnSend"
+            Grid.Column="2"
+            Grid.Row="6"
+            Grid.RowSpan="2"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            FontSize="25"
+            TextDe="Daten absenden"
+            TextEn="Send datas"
+            />
+
+        <wpfex:TouchButton
+            Grid.Column="4"
+            x:Name="m_BtnClose"
+            Grid.RowSpan="2"
+            Background="#01000000"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
+            Click="BtnClose_Click"
+            Style="{StaticResource StyleBorderlessButton}">
+            <Image 
+                Height="40"
+                Margin="50"
+               Source="/gemelo.Biographieportal;component/Resources/Images/CloseBtn.png"/>
+        </wpfex:TouchButton>
+
+        <local:ScreenKeyboard
+            x:Name="m_Keyboard"
+            Grid.Column="2"
+            Grid.Row="8"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom" d:IsHidden="True"/>
+
+        <Grid
+            Grid.Column="2"
+            Grid.Row="8"
+            
+            x:Name="m_PanelSuccess">
+
+            <Border
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Style="{StaticResource BorderStyleContext}">
+
+                <TextBlock
+                    FontSize="30"
+                    TextAlignment="Center"
+                    Margin="100,50"
+                VerticalAlignment="Center"
+                >
+                Vielen Dank für Ihre Angaben.<LineBreak/> Wir werden zeitnah mit Ihnen Kontakt aufnehmen.
+                </TextBlock>
+            </Border>
+        </Grid>
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,72 @@
+﻿<exhibit:LocalizationExhibitMainWindow xmlns:SendOwnStories="clr-namespace:Gemelo.Applications.Biographieportal.Controls.SendOwnStories"  xmlns:Headers="clr-namespace:Gemelo.Applications.Biographieportal.Controls.Headers" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:exhibit="http://schema.gemelo.de/components/exhibits"
+    xmlns:wpfex="http://schema.pete.de/components/wpfex"
+    xmlns:ExcelReader="clr-namespace:Gemelo.Components.ClosedXml.Wpf.Controls.ExcelReader;assembly=gemelo.ClosedXml.Wpf" 
+    xmlns:ContentDetails="clr-namespace:Gemelo.Applications.Biographieportal.Controls.ContentDetails" 
+    xmlns:ContentLists="clr-namespace:Gemelo.Applications.Biographieportal.Controls.ContentLists" xmlns:Controls="clr-namespace:Gemelo.Applications.Biographieportal.Controls" 
+    x:Class="Gemelo.Applications.Biographieportal.Windows.MainWindow"
+    mc:Ignorable="d"
+    Title="Biographieportal" 
+    WindowStyle="None" WindowState="Maximized"
+    ScreenRatio="Ratio16to9"
+    Icon="/Gemelo.Biographieportal;component/Resources/Icons/gemelo.ico"
+    d:DesignWidth="1920" d:DesignHeight="1080">
+
+    <exhibit:LocalizationExhibitMainWindow.Resources>
+        <ResourceDictionary>
+
+          
+        </ResourceDictionary>
+    </exhibit:LocalizationExhibitMainWindow.Resources>
+
+<Grid
+        Width="1920"
+        Height="1080"
+        Background="Black"
+        x:Name="m_GridMain">
+
+        <ContentLists:ContentList 
+            x:Name="m_ContentList"
+            VerticalAlignment="Bottom"/>
+        <ContentDetails:ContentDetail 
+            x:Name="m_ContentDetail" 
+            VerticalAlignment="Bottom"/>
+        <Headers:Header x:Name="m_Header" VerticalAlignment="Top" />
+
+
+        <Controls:MediaFullscreen x:Name="m_MediaFullscreen" />
+        <Controls:BioMediaplayer x:Name="m_Mediaplayer" d:IsHidden="True" />
+        <Controls:Intro x:Name="m_Intro" d:IsHidden="True" />
+        
+        <SendOwnStories:SendOwnStory x:Name="m_SendOwnStory" d:IsHidden="True" />
+    
+        <Controls:Impressum x:Name="m_Impressum" d:IsHidden="True" />
+
+        <ExcelReader:ExcelReaderProgress
+            Background="#FFA33749"
+            Foreground="White"
+            FontSize="20"
+            FontFamily="Weissenhof Grotesk"
+            x:Name="m_ExcelReaderProgress" d:IsHidden="True"/>
+
+
+        <Border
+            x:Name="m_BorderTraceLiveView"
+            Visibility="Collapsed"
+            IsHitTestVisible="False"
+            Background="#60ffffff" d:IsLocked="True" d:IsHidden="True">
+
+            <wpfex:TraceLiveView
+                x:Name="m_TraceLiveView"
+                Visibility="{Binding Visibility, ElementName=m_BorderTraceLiveView}"
+                FontSize="30"
+                MaxLines="60"
+                Margin="20" />
+        </Border>
+
+    </Grid>
+</exhibit:LocalizationExhibitMainWindow>

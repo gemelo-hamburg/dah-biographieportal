@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Gemelo.Applications.Biographieportal.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RestartInterval" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:02:00</Value>
+    </Setting>
+    <Setting Name="WaitIfContentReadingError" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CategorySliderTimeout" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:20</Value>
+    </Setting>
+    <Setting Name="VisitorMessagesPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">y:\Messages</Value>
+    </Setting>
+    <Setting Name="ContentDataPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">y:\ContentData</Value>
+    </Setting>
+    <Setting Name="CheckNewContentInterval" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:02:00</Value>
+    </Setting>
+    <Setting Name="SendOwnStory_SuccessMessageDuration" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:05</Value>
+    </Setting>
+    <Setting Name="RestartInterval_SendOwnStory" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:05:00</Value>
+    </Setting>
+    <Setting Name="ImportReader_ShowUnimportantMessages" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
