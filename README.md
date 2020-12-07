@@ -89,9 +89,9 @@ Nach Programmstart und Begrüßungsbildschirm wird dem Besucher eine umfangreich
 
 Der Besucher hat außerdem die Möglichkeit, über ein Formular eine eigene Geschichte zu hinterlegen und um Kontaktaufnahme zu bitten.
 
-![Beispielbild 001]/ExampleScreenshots/001.jpg
-![Beispielbild 002]/ExampleScreenshots/002.jpg
-![Beispielbild 003]/ExampleScreenshots/003.jpg
+![Beispielbild 001](/ExampleScreenshots/001.jpg)
+![Beispielbild 002](/ExampleScreenshots/002.jpg)
+![Beispielbild 003](/ExampleScreenshots/003.jpg)
 
 
 
