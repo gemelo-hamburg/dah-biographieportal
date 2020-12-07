@@ -2,15 +2,15 @@
 Biographieportal für das Deutsche Auswandererhaus in Bremerhaven
 
 
-#Inhaltsverzeichnis
+# Inhaltsverzeichnis
 
-#Kurzbeschreibung
+# Kurzbeschreibung
 
-#Installation
+# Installation
 
-#Benutzung/Usage
+# Benutzung/Usage
 
-#Credits
+# Credits
 
-#Lizenz
+# Lizenz
 
