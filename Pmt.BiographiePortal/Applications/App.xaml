@@ -1,0 +1,7 @@
+﻿<pmt:PmtApplication
+    x:Class="Gemelo.Applications.Biographieportal.Applications.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:pmt="http://schema.gemelo.de/components/pmt"
+    xmlns:exhibit="http://schema.gemelo.de/components/exhibits">
+</pmt:PmtApplication>

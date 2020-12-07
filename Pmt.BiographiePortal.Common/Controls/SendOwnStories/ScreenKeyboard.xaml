@@ -1,0 +1,248 @@
+﻿<UserControl 
+    x:Class="Gemelo.Applications.Biographieportal.Controls.SendOwnStories.ScreenKeyboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:wpfex="http://schema.gemelo.de/components/wpfex"
+    mc:Ignorable="d" 
+      RenderTransformOrigin="0.5,0.5">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Styles/TextStyles.xaml" />
+                <ResourceDictionary Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Styles/Buttons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DrawingImage
+                x:Key="ImageEnterKey">
+                <DrawingImage.Drawing>
+                    <GeometryDrawing 
+                                Brush="#FFE2C1BD"
+                                Geometry="M406 148c0,0 -384,385 -385,386 -2,3 -5,6 -7,9 -1,1 -2,3 
+                                    -2,5 -2,3 -3,6 -5,9 -1,2 -1,4 -2,7 -1,3 -2,5 -2,8 -1,3 -1,6 
+                                    -1,9 0,2 0,4 0,5 0,4 0,8 1,12 0,1 0,2 0,3 1,5 2,9 4,13 0,0 
+                                    0,1 0,1 2,4 4,9 6,13 0,0 0,1 1,1 2,4 5,7 8,10 1,1 1,1 2,2l0 
+                                    0 383 382c31,30 81,29 112,-2 31,-31 31,-80 1,-111l0 0 -244 
+                                    -244 1391 0 0 0c42,-1 76,-34 78,-76l0 0 0 -1 0 -3 0 -3 0 
+                                    -517 0 0c-1,-43 -36,-78 -80,-78 -44,0 -80,35 -81,78l0 439 
+                                    -1308 0 244 -244c30,-31 29,-81 -1,-112 -31,-31 -81,-32 
+                                    -112,-2l-1 1z" />
+                </DrawingImage.Drawing>
+            </DrawingImage>
+
+            <ControlTemplate
+                x:Key="TemplateKeyButton"
+                TargetType="Button">
+                <Border
+                    x:Name="PART_ButtonBorder"
+                    CornerRadius="0"
+                    BorderThickness="0"
+                    BorderBrush="#707070"
+                    RenderTransformOrigin="0.5,0.5"
+                    Background="{TemplateBinding Background}">
+                    <Border
+                        ClipToBounds="True">
+                        <ContentPresenter
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </Border>
+                <ControlTemplate.Triggers>
+                    <Trigger 
+                        Property="IsEnabled" Value="False">
+                        <Setter 
+                            TargetName="PART_ButtonBorder" 
+                            Property="Opacity" Value="0.42" />
+                    </Trigger>
+                    <Trigger 
+                        Property="Button.IsPressed" Value="True">
+                        <Setter 
+                            Property="Foreground"  Value="White" />
+                        <Setter 
+                            Property="Background"  Value="#707070" />
+                        <Setter 
+                            TargetName="PART_ButtonBorder"
+                            Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform
+                                    ScaleX="0.95" ScaleY="0.95" />
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+            <Style
+                x:Key="StyleKeyButton"
+                TargetType="wpfex:TouchButton">
+                <Setter Property="Width" Value="60" />
+                <Setter Property="Height" Value="60" />
+                <Setter Property="Margin" Value="1" />
+                <Setter Property="FontFamily" Value="Weissenhof Grotesk" />
+                <Setter Property="FontWeight" Value="Normal" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="Background" Value="#FF622E36" />
+                <Setter Property="Foreground" Value="#FFE2C1BD" />
+                <Setter Property="Template" Value="{StaticResource TemplateKeyButton}" />
+                <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
+            </Style>
+
+            <Style
+                TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="Weissenhof Grotesk" />
+                <Setter Property="FontWeight" Value="Normal" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="Foreground" Value="#FFE2C1BD" />
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <UserControl.RenderTransform>
+        <TransformGroup>
+            <ScaleTransform/>
+            <SkewTransform/>
+            <RotateTransform
+                x:Name="m_RotateTransform"
+                Angle="0"/>
+            <TranslateTransform
+                x:Name="m_TranslateTransform" />
+        </TransformGroup>
+    </UserControl.RenderTransform>
+
+    <Grid>
+
+        <!--<Border
+            Background="{StaticResource BrushRed}"
+            x:Name="m_BorderBackground"
+            CornerRadius="20,20,0,0" BorderBrush="Black">
+            <Border.Effect>
+                <DropShadowEffect
+                    Direction="90"
+                    ShadowDepth="5"
+                    BlurRadius="15"
+                    Opacity="0.3 "/>
+            </Border.Effect>
+           
+
+        </Border>-->
+
+
+        <StackPanel
+            Margin="0"
+            x:Name="m_StackMain"
+            HorizontalAlignment="Left">
+            <StackPanel
+                Orientation="Horizontal">
+                <wpfex:TouchButton Content="1" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="2" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="3" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="4" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="5" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="6" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="7" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="8" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="9" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="0" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="ß" Style="{StaticResource StyleKeyButton}" />
+                <!--<wpfex:TouchButton Content="?" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="!" Style="{StaticResource StyleKeyButton}" />-->
+                <wpfex:TouchButton Content="$" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton 
+                    Content="Õ" 
+                    Tag="[backspace]"
+                    Style="{StaticResource StyleKeyButton}" 
+                    FontFamily="Wingdings" 
+                    Width="95" />
+            </StackPanel>
+            <StackPanel
+                Orientation="Horizontal"
+                Margin="20,0,0,0">
+                <wpfex:TouchButton Content="Q" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="W" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="E" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="R" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="T" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton 
+                    x:Name="m_BtnEnY"
+                    Content="Z" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="U" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="I" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="O" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="P" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="Ü" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="+" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Content="*" Style="{StaticResource StyleKeyButton}" />
+                <!--<wpfex:TouchButton Content="~" Style="{StaticResource StyleKeyButton}" />-->
+            </StackPanel>
+            <StackPanel
+                Orientation="Horizontal"
+                Margin="30,0,0,0">
+                <wpfex:TouchButton Width="63" Content="A" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63" Content="S" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63" Content="D" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63" Content="F" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63" Content="G" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63" Content="H" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63" Content="J" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63" Content="K" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63" Content="L" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63" Content="Ö" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63" Content="Ä" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63" Content="/" Style="{StaticResource StyleKeyButton}" />
+                <!--<wpfex:TouchButton Content="'" Style="{StaticResource StyleKeyButton}" />-->
+                <!--<wpfex:TouchButton Content="&amp;" Style="{StaticResource StyleKeyButton}" />-->
+
+            </StackPanel>
+            <StackPanel
+                Margin="50,0,0,0"
+                Orientation="Horizontal">
+                <!--<wpfex:TouchButton Content="|" Style="{StaticResource StyleKeyButton}" />-->
+                <wpfex:TouchButton 
+                    x:Name="m_BtnEnZ"
+                    Content="Y" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63"  Content="X" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63"  Content="C" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63"  Content="V" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63"  Content="B" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63"  Content="N" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="63"  Content="M" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="56"  Content="." Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="56"  Content="-" Style="{StaticResource StyleKeyButton}" />
+                <!--<wpfex:TouchButton Content="_" Style="{StaticResource StyleKeyButton}" />-->
+                <wpfex:TouchButton Width="56" Content="=" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton Width="56" Content="%" Style="{StaticResource StyleKeyButton}" />
+                <!--<wpfex:TouchButton Content="^" Style="{StaticResource StyleKeyButton}" />-->
+                <wpfex:TouchButton Content="#" Style="{StaticResource StyleKeyButton}" />
+            </StackPanel>
+            <StackPanel
+                Orientation="Horizontal"
+                Margin="80 0 0 0">
+                <wpfex:TouchButton Content="@" Style="{StaticResource StyleKeyButton}" />
+                <wpfex:TouchButton 
+                    Tag="[space]"
+                    Content="space"
+                    Style="{StaticResource StyleKeyButton}" 
+                    Width="490" />
+                <wpfex:TouchButton 
+                    Width="140"
+                    Tag="[enter]"
+                    Style="{StaticResource StyleKeyButton}" >
+                    <StackPanel 
+                        Margin="13"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            VerticalAlignment="Center">
+                            return
+                        </TextBlock>
+                        <Image
+                        Margin="10,5"
+                        Source="{StaticResource ImageEnterKey}"/>
+                    </StackPanel>
+                </wpfex:TouchButton>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
+

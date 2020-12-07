@@ -1,0 +1,167 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>Gemelo.Applications.Pmt.BiographiePortal</RootNamespace>
+    <AssemblyName>gemelo.Pmt.BiographiePortal.Common</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icons\gemelo.ico" />
+    <None Remove="Resources\Icons\PmtIcon.ico" />
+    <None Remove="Resources\Images\BackButton.png" />
+    <None Remove="Resources\Images\background.png" />
+    <None Remove="Resources\Images\CloseBtn.png" />
+    <None Remove="Resources\Images\dah-logo-long.png" />
+    <None Remove="Resources\Images\DownButton.png" />
+    <None Remove="Resources\Images\Example\contentdetail.png" />
+    <None Remove="Resources\Images\Example\contentlist.png" />
+    <None Remove="Resources\Images\Example\intro.png" />
+    <None Remove="Resources\Images\Example\ownstory.png" />
+    <None Remove="Resources\Images\FullSizeButton.png" />
+    <None Remove="Resources\Images\german-flag.png" />
+    <None Remove="Resources\Images\Hintergrund-neu1.jpg" />
+    <None Remove="Resources\Images\Hintergrund-neu2.png" />
+    <None Remove="Resources\Images\HomeButton.png" />
+    <None Remove="Resources\Images\Intro\image-buttons-intro2.png" />
+    <None Remove="Resources\Images\Intro\image-intro0.png" />
+    <None Remove="Resources\Images\Intro\image-intro2.png" />
+    <None Remove="Resources\Images\Logo.png" />
+    <None Remove="Resources\Images\Mediaplayer\forward.png" />
+    <None Remove="Resources\Images\Mediaplayer\pause.png" />
+    <None Remove="Resources\Images\Mediaplayer\play.png" />
+    <None Remove="Resources\Images\Mediaplayer\rewind.png" />
+    <None Remove="Resources\Images\Mediaplayer\stop.png" />
+    <None Remove="Resources\Images\OwnStoryButton-Big.png" />
+    <None Remove="Resources\Images\OwnStoryButton.png" />
+    <None Remove="Resources\Images\united-states-flag.png" />
+    <None Remove="Resources\Texts\Impressum.rtf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Resources\Styles\Borders.xaml" />
+    <Page Remove="Resources\Styles\Buttons.xaml" />
+    <Page Remove="Resources\Styles\Colors.xaml" />
+    <Page Remove="Resources\Styles\Scrollbars.xaml" />
+    <Page Remove="Resources\Styles\ScrollbarsWhite.xaml" />
+    <Page Remove="Resources\Styles\TextStyles.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\gemelo.ico" />
+    <Resource Include="Resources\Icons\PmtIcon.ico" />
+    <Resource Include="Resources\Images\BackButton.png" />
+    <Resource Include="Resources\Images\background.png" />
+    <Resource Include="Resources\Images\CloseBtn.png" />
+    <Resource Include="Resources\Images\dah-logo-long.png" />
+    <Resource Include="Resources\Images\DownButton.png" />
+    <Resource Include="Resources\Images\Example\contentdetail.png" />
+    <Resource Include="Resources\Images\Example\contentlist.png" />
+    <Resource Include="Resources\Images\Example\intro.png" />
+    <Resource Include="Resources\Images\Example\ownstory.png" />
+    <Resource Include="Resources\Images\FullSizeButton.png" />
+    <Resource Include="Resources\Images\german-flag.png" />
+    <Resource Include="Resources\Images\Hintergrund-neu1.jpg" />
+    <Resource Include="Resources\Images\Hintergrund-neu2.png" />
+    <Resource Include="Resources\Images\HomeButton.png" />
+    <Resource Include="Resources\Images\Intro\image-buttons-intro2.png" />
+    <Resource Include="Resources\Images\Intro\image-intro0.png" />
+    <Resource Include="Resources\Images\Intro\image-intro2.png" />
+    <Resource Include="Resources\Images\Logo.png" />
+    <Resource Include="Resources\Images\Mediaplayer\forward.png" />
+    <Resource Include="Resources\Images\Mediaplayer\pause.png" />
+    <Resource Include="Resources\Images\Mediaplayer\play.png" />
+    <Resource Include="Resources\Images\Mediaplayer\rewind.png" />
+    <Resource Include="Resources\Images\Mediaplayer\stop.png" />
+    <Resource Include="Resources\Images\OwnStoryButton-Big.png" />
+    <Resource Include="Resources\Images\OwnStoryButton.png" />
+    <Resource Include="Resources\Images\united-states-flag.png" />
+    <Resource Include="Resources\Styles\Borders.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\Styles\Buttons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\Styles\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\Styles\Scrollbars.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\Styles\ScrollbarsWhite.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\Styles\TextStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <EmbeddedResource Include="Resources\Texts\Impressum.rtf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="gemelo.Cms">
+      <HintPath>..\Libraries\gemelo.Cms.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Cms.Wpf">
+      <HintPath>..\Libraries\gemelo.Cms.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Common">
+      <HintPath>..\Libraries\gemelo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Common.Exhibits">
+      <HintPath>..\Libraries\gemelo.Common.Exhibits.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Common.Wpf">
+      <HintPath>..\Libraries\gemelo.Common.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Dah.Common">
+      <HintPath>..\Libraries\gemelo.Dah.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Dah.Common.Wpf">
+      <HintPath>..\Libraries\gemelo.Dah.Common.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Pmt.Common">
+      <HintPath>..\Libraries\gemelo.Pmt.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Pmt.Common.Wpf">
+      <HintPath>..\Libraries\gemelo.Pmt.Common.Wpf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Controls\SendOwnStories\SosComboBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Controls\DahButton.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\Impressum.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\SendOwnStories\EditBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\SendOwnStories\ScreenKeyboard.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\SendOwnStories\SendOwnStory.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\SendOwnStories\SosComboBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

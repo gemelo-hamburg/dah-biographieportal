@@ -1,0 +1,129 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <Deterministic>false</Deterministic>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\Icons\PmtIcon.ico</ApplicationIcon>
+    <Authors>gemelo GmbH</Authors>
+    <Product>Deutsches Auswandererhaus Partizipative Museumstechnologie</Product>
+    <Copyright>© Copyright 2021 gemelo GmbH</Copyright>
+    <AssemblyVersion>1.0.*</AssemblyVersion>
+    <RootNamespace>Gemelo.Applications.Pmt.BiographiePortal</RootNamespace>
+    <AssemblyName>gemelo.BiographiePortal</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CS7035</NoWarn>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;CS7035</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Code\Misc\**" />
+    <Compile Remove="Resources\**" />
+    <EmbeddedResource Remove="Code\Misc\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <None Remove="Code\Misc\**" />
+    <None Remove="Resources\**" />
+    <Page Remove="Code\Misc\**" />
+    <Page Remove="Resources\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="PublicDemoContent\ContentDefinition\content.public.xlsx" />
+    <None Remove="PublicDemoContent\Media\dummy-earth.mp4" />
+    <None Remove="PublicDemoContent\Media\gemaelde.jpg" />
+    <None Remove="PublicDemoContent\Media\platzhalter-dah.png" />
+    <None Remove="PublicDemoContent\Media\schmuck.jpg" />
+    <None Remove="PublicDemoContent\Media\tasse.JPG" />
+    <None Remove="PublicDemoContent\Media\teddy.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Applications\App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Include="Applications\App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="PublicDemoContent\ContentDefinition\content.public.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PublicDemoContent\Media\dummy-earth.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PublicDemoContent\Media\gemaelde.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PublicDemoContent\Media\platzhalter-dah.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PublicDemoContent\Media\schmuck.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PublicDemoContent\Media\tasse.JPG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PublicDemoContent\Media\teddy.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\gemelo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Icons\PmtIcon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.101.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pmt.BiographiePortal.Common\Pmt.BiographiePortal.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="gemelo.ClosedXml">
+      <HintPath>..\Libraries\gemelo.ClosedXml.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Cms">
+      <HintPath>..\Libraries\gemelo.Cms.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Cms.Wpf">
+      <HintPath>..\Libraries\gemelo.Cms.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Common">
+      <HintPath>..\Libraries\gemelo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Common.Exhibits">
+      <HintPath>..\Libraries\gemelo.Common.Exhibits.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Common.Wpf">
+      <HintPath>..\Libraries\gemelo.Common.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Dah.Common">
+      <HintPath>..\Libraries\gemelo.Dah.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Dah.Common.Wpf">
+      <HintPath>..\Libraries\gemelo.Dah.Common.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.FileUpdate">
+      <HintPath>..\Libraries\gemelo.FileUpdate.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Pmt.Common">
+      <HintPath>..\Libraries\gemelo.Pmt.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="gemelo.Pmt.Common.Wpf">
+      <HintPath>..\Libraries\gemelo.Pmt.Common.Wpf.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

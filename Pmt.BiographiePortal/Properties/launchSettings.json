@@ -1,0 +1,29 @@
+{
+  "profiles": {
+    "Pmt.BiographiePortal.DemoPublic": {
+      "commandName": "Project",
+      "commandLineArgs": "-visitormessagespath:\"c:\\temp\"  -servercontentdatapath:\"PublicDemoContent\"   -vv  "
+    },
+    "Pmt.BiographiePortal.Teams": {
+      "commandName": "Project",
+      "commandLineArgs": "-servercontentdatapath:\"C:\\Users\\thies\\gemelo gmbh\\G0498 Biographieportal - General\\Content\"  -visitormessagespath:\"c:\\temp\"   "
+    },
+    "Pmt.BiographiePortal": {
+      "commandName": "Project",
+      "commandLineArgs": "-servercontentdatapath:\"C:\\Temp\\G0498 DAH Bioportal\\2021-11-16 contentdata\\contentdata\"  -visitormessagespath:\"c:\\temp\" "
+    },
+    "Pmt.BiographiePortal.CreateJson": {
+      "commandName": "Project",
+      "commandLineArgs": "-servercontentdatapath:\"C:\\Temp\\G0498 DAH Bioportal\\2021-11-16 contentdata\\contentdata\"  -visitormessagespath:\"c:\\temp\" -createwebjson  "
+    },
+    "Pmt.BiographiePortal.CreateJsonTeams": {
+      "commandName": "Project",
+      "commandLineArgs": "-servercontentdatapath:\"C:\\Users\\thies\\gemelo gmbh\\G0498 Biographieportal - General\\Content\"  -visitormessagespath:\"c:\\temp\" -createwebjson  "
+    },
+    "Pmt.BiographiePortal.WithoutStartParameters": {
+      "commandName": "Project",
+      "commandLineArgs": " "
+    }
+
+  }
+}
