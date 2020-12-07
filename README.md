@@ -1,5 +1,5 @@
 # DAH Biographieportal
-**Biographieportal** für das Deutsche Auswandererhaus in Bremerhaven
+**Biographieportal** für das *Deutsche Auswandererhaus* in Bremerhaven
 
 
 # Inhaltsverzeichnis
@@ -124,7 +124,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # Credits/Projektpartner
 
-Diese Anwendung ist entstanden im Verbundprojekt museum4punkt0 – Digitale Strategien für das Museum der Zukunft, Teilprojekt "Deutsches Auswandererhaus". Weitere Informationen: www.museum4punkt0.de.
+Diese Anwendung ist entstanden im Verbundprojekt museum4punkt0 – Digitale Strategien für das Museum der Zukunft, Teilprojekt *Deutsches Auswandererhaus*. Weitere Informationen: www.museum4punkt0.de.
 
 Das Projekt museum4punkt0 wird gefördert durch die Beauftragte der Bundesregierung für Kultur und Medien aufgrund eines Beschlusses des Deutschen Bundestages.
 
