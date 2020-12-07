@@ -4,9 +4,9 @@ Biographieportal für das Deutsche Auswandererhaus in Bremerhaven
 
 # Inhaltsverzeichnis
 
-1. Kurzbeschreibung
+1. [Kurzbeschreibung](#kurzbeschreibung)
 
-1. Installation
+1. [Installation](#installation)
 
 1. Benutzung/Usage
 
@@ -84,7 +84,7 @@ Am Anfang eines Eintrages wird der Typ ´meta´ definiert. Hier erfolgen relatio
 Es können die Typen Teaser, Image und Movie folgen, in der jeweils beschreibende Texte und die Dateinamen definiert sind.
 
 
-# Benutzung/Usage
+# Benutzung
 Nach Programmstart und Begrüßungsbildschirm wird dem Besucher eine umfangreiche Liste mit allen Biographie angezeigt. Diese kann der Besucher wie oben beschrieben über die Filter eingrenzen. Innerhalb der Biographie können weitere passenden Biographien verlinkt sein.
 
 Der Besucher hat außerdem die Möglichkeit, über ein Formular eine eigene Geschichte zu hinterlegen und um Kontaktaufnahme zu bitten.
