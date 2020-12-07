@@ -51,7 +51,7 @@ Folgende Schriftarten müssen auf dem PC installiert sein:
 jeweils mit den Schriftschnitten Bold, Italic und Light.
 
 ## Einstellungen
-In der .settings Datei können folgende Einstellungen vorgenommen werden:
+In der [.settings Datei](Properties/Settings.settings) können folgende Einstellungen vorgenommen werden:
 
 * `RestartInteval`
 Intervall als Timespan, nach der das Exponat bei Nichtbenutzung in den Timeout geht und die Startseite anzeigt.
@@ -73,7 +73,7 @@ Siehe nächster Absatz.
 
 
 ## Eigentliche Inhalte
-Die eigentlichen Inhalte bestehen im wesentlichen aus einer selbsterklärenden Excel Datei (siehe Ordner Example Content).
+Die eigentlichen Inhalte bestehen im wesentlichen aus einer selbsterklärenden Excel Datei ([siehe Ordner Example Content](ExampleContent)).
 
 Diese besteht aus ein 6 Tabellen:
 
