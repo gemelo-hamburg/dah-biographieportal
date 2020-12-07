@@ -26,12 +26,12 @@ Werden Sie mit Ihrer Geschichte Teil des Portals. Egal, ob Sie bzw. Ihre Vorfahr
 			
 			
 Dieses Biographieportal ist entstanden im Verbundprojekt museum4punkt0
-– Digitale Strategien für das Museum der Zukunft, Teilprojekt Deutsches Auswandererhaus
-– Migrationsgeschichte digital erleben. 
+* Digitale Strategien für das Museum der Zukunft, Teilprojekt Deutsches Auswandererhaus
+* Migrationsgeschichte digital erleben. 
 
 Das Projekt museum4punkt0 wird gefördert durch die Beauftragte der Bundesregierung für Kultur und Medien aufgrund eines Beschlusses des Deutschen Bundestages.
 
-Weitere Informationen: www.museum4punkt0.de
+Weitere Informationen: [museum4punkt0](www.museum4punkt0.de)
 
 # Installation
 

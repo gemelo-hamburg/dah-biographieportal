@@ -13,9 +13,10 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
-.png
-.jpeg
-.otf
+*.png
+*.jpeg
+*.jpg
+*.otf
 
 
 # Mono auto generated files
