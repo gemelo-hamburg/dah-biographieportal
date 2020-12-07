@@ -8,11 +8,13 @@ Biographieportal für das Deutsche Auswandererhaus in Bremerhaven
 
 1. [Installation](#installation)
 
-1. Benutzung/Usage
+1. [Benutzung](#benutzung)
 
-1. Credits
+1. [Credits](#credits)
 
-1. Lizenz
+1. [Lizenz](#lizenz)
+
+1. [Projektpartner](#projektpartner)
 
 
 # Kurzbeschreibung
@@ -105,8 +107,33 @@ Der Besucher hat außerdem die Möglichkeit, über ein Formular eine eigene Gesc
 ![Beispielbild 007](/ExampleScreenshots/007.jpg)
 
 
-
 # Credits
+tbd.
+
 
 # Lizenz
+Copyright © 2019/2020, gemelo GmbH, Hamburg, Germany
+
+Die vom Auftragnehmer im Rahmen des Projektes erstellten Programmcodes und erstellten/verwendeten Assets werden im Rahmen der MIT License bereitgestellt. Davon ausgenommen sind Elemente, an denen der Auftragnehmer keine Rechte besitzt.
+
+MIT license
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+# Projektpartner
+
+Diese Anwendung ist entstanden im Verbundprojekt museum4punkt0 – Digitale Strategien für das Museum der Zukunft, Teilprojekt "Deutsches Auswandererhaus". Weitere Informationen: www.museum4punkt0.de.
+
+Das Projekt museum4punkt0 wird gefördert durch die Beauftragte der Bundesregierung für Kultur und Medien aufgrund eines Beschlusses des Deutschen Bundestages.
+
+Auftraggeber: Deutsches Auswandererhaus in Bremerhaven, Columbusstraße 65, 27568 Bremerhaven
+
+Auftragnehmer: gemelo GmbH, interactive Media, Stresemannstraße 375, 22761 Hamburg, Telefon +49/40/3553060
+Ansprechpartner: Thies Reinhold, info@gemelo.de
+
 
