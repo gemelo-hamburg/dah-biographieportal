@@ -85,6 +85,10 @@ Am Anfang eines Eintrages wird der Typ ´meta´ definiert. Hier erfolgen relatio
 
 Es können die Typen Teaser, Image und Movie folgen, in der jeweils beschreibende Texte und die Dateinamen definiert sind.
 
+### Videos
+Die Bitrate der Videos sollte bei 25Mbit/sec liegen, je nach Leistungsfähigkeit der verwendeten Hardware. 
+Kodierung: H.264 
+Auflösung: Full-HD
 
 # Benutzung
 Nach Programmstart und Begrüßungsbildschirm wird dem Besucher eine umfangreiche Liste mit allen Biographie angezeigt. Diese kann der Besucher wie oben beschrieben über die Filter eingrenzen. Innerhalb der Biographie können weitere passenden Biographien verlinkt sein.
