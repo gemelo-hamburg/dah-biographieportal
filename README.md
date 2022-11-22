@@ -55,11 +55,11 @@ In der [.settings Datei](Properties/Settings.settings) können folgende Einstell
 Intervall als Timespan, nach der das Exponat bei Nichtbenutzung in den Timeout geht und die Startseite anzeigt.
 
 * `VisitorMessagesPath`
-Pfad zu dem geschützten Datenbereich, unter der die Geschichten der Besucher abgelegt werden.
+Pfad zu dem geschützten Datenbereich, unter dem die Geschichten der Besucher abgelegt werden.
 
 * `ContentDataPath`
 Pfad zu den eigentlichen Inhalten. 
-Hier müssen zwei Ordner angelegt sein
+Hier müssen zwei Ordner angelegt sein.
 
 1. `ContentDefinition`
 Hier muss sich eine Excel Datei (xlsx) mit den eigentlichen Texten und Metadaten befinden.
@@ -126,15 +126,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # Credits/Projektpartner
 
-Diese Anwendung ist entstanden im Verbundprojekt museum4punkt0 – Digitale Strategien für das Museum der Zukunft, Teilprojekt *Migrationsgeschichte digital erleben*. Weitere Informationen: www.museum4punkt0.de.
+Diese Anwendung ist entstanden im Verbundprojekt museum4punkt0 – Digitale Strategien für das Museum der Zukunft, Teilprojekt *Deutsches Auswandererhaus* - Migrationsgeschichte digital erleben. Weitere Informationen: www.museum4punkt0.de.
 
 Das Projekt museum4punkt0 wird gefördert durch die Beauftragte der Bundesregierung für Kultur und Medien aufgrund eines Beschlusses des Deutschen Bundestages.
 
-Auftraggeber/inhaltliches Konzept: Deutsches Auswandererhaus Bremerhaven, Columbusstraße 65, 27568 Bremerhaven
+Auftraggeber und inhaltliches Konzept: Deutsches Auswandererhaus Bremerhaven, Columbusstraße 65, 27568 Bremerhaven
 
 Design: Andreas Heller Architects and Designers, Hamburg
 
-Auftragnehmer/Programmierung: gemelo GmbH, interactive Media, Stresemannstraße 375, 22761 Hamburg, Telefon +49/40/3553060
+Auftragnehmer Programmierung: gemelo GmbH, interactive Media, Stresemannstraße 375, 22761 Hamburg, Telefon +49/40/3553060
 Ansprechpartner: Thies Reinhold, info@gemelo.de
 
 
