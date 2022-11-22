@@ -71,9 +71,9 @@ Siehe nächster Absatz.
 
 
 ## Eigentliche Inhalte
-Die eigentlichen Inhalte bestehen im Wesentlichen aus einer selbsterklärenden Excel Datei ([siehe Ordner Example Content](ExampleContent)).
+Die eigentlichen Inhalte bestehen im Wesentlichen aus einer selbsterklärenden Excel-Datei ([siehe Ordner Example Content](ExampleContent)).
 
-Diese besteht aus ein 6 Tabellen:
+Diese besteht aus 6 Tabellen:
 
 Der Haupttabelle und 5 relational verknüpften Untertabellen, in der Zeiträume, Migrationsarten, Migrationsgründe, Folgen und Historische Hintergründe definiert werden. Nach diesen kann der Besucher filtern.
 
@@ -89,7 +89,7 @@ Kodierung: H.264
 Auflösung: Full-HD
 
 # Benutzung
-Nach Programmstart und Begrüßungsbildschirm wird dem Besucher eine umfangreiche Liste mit allen Biographien angezeigt. Diese kann der Besucher wie oben beschrieben über die Filter eingrenzen. Innerhalb der Biographie können weitere passenden Biographien verlinkt sein.
+Nach Programmstart und Begrüßungsbildschirm wird dem Besucher eine umfangreiche Liste mit allen Biographien angezeigt. Diese kann der Besucher wie oben beschrieben über die Filter eingrenzen. Innerhalb der Biographie können weitere passende Biographien verlinkt sein.
 
 Der Besucher hat außerdem die Möglichkeit, über ein Formular eine eigene Geschichte zu hinterlegen und um Kontaktaufnahme durch Mitarbeiter des Museums zu bitten.
 
