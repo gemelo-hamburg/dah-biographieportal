@@ -1,0 +1,175 @@
+﻿<UserControl 
+    x:Class="Gemelo.Applications.Biographieportal.Controls.ContentLists.ContentList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:Controls="clr-namespace:Gemelo.Applications.Biographieportal.Controls;assembly=gemelo.Pmt.BiographiePortal.Common"
+    xmlns:wpfex="http://schema.gemelo.de/components/wpfex"
+    xmlns:local="clr-namespace:Gemelo.Applications.Biographieportal.Controls.ContentLists"
+    mc:Ignorable="d" 
+    Width="1920"
+    Height="915"
+    Background="Black"
+    >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Styles/TextStyles.xaml" />
+                <ResourceDictionary Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Styles/Buttons.xaml" />
+                <ResourceDictionary Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Styles/Scrollbars.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+
+        <!--<Image
+            Margin="0,-165,0,0"
+            VerticalAlignment="Top"
+            Height="2080"
+            Width="1920"
+            Opacity="0.1"
+            Grid.RowSpan="8"
+            Grid.ColumnSpan="5"
+            x:Name="m_ImgExample" Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Images/Example/contentlist.png"
+            />-->
+
+        <ScrollViewer
+            x:Name="m_Scrollviewer"
+            ScrollChanged="Scrollviewer_ScrollChanged"
+            TouchDown="Control_TouchDown"
+            MouseDown="Control_MouseDown"
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Visible"
+            ManipulationBoundaryFeedback="Scrollviewer_ManipulationBoundaryFeedback"
+            PanningMode="VerticalOnly"
+            Style="{StaticResource ScrollViewerWithBarOverContent}" >
+
+            <StackPanel
+                Margin="100,0">
+
+                <StackPanel 
+                    x:Name="m_PanelFilterName"
+                    Margin="0,70,0,0">
+                    <StackPanel 
+                        Orientation="Horizontal">
+                        
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            x:Name="m_TxtFilterType"
+                            Style="{StaticResource TextStyle_Default}">
+                        Migrationsarten:
+                        </TextBlock>
+
+                        <Controls:DahButton 
+                            x:Name="m_BtnMigrationType"
+                            Height="95"
+                            IsHitTestVisible="False"
+                            TextDe="Migrationsarten"
+                            FireClickAtTouchDown="False"
+                            TextEn="Migrationstypes"
+                            FontSize="23"
+                            ButtonBackground="{StaticResource BrushRed}" />
+                        <Controls:DahButton 
+                            x:Name="m_BtnMigrationReason"
+                            Height="95"
+                            IsHitTestVisible="False"
+                            FireClickAtTouchDown="False"
+                            TextDe="vor der Migration"
+                            TextEn="before the Migration"
+                            FontSize="23"
+                            ButtonBackground="{StaticResource BrushOrange}"/>
+                        <Controls:DahButton 
+                            x:Name="m_BtnMigrationEffect"
+                            Height="95"
+                            IsHitTestVisible="False"
+                            FireClickAtTouchDown="False"
+                            TextDe="nach der Migration"
+                            TextEn="after the Migration"
+                            FontSize="23"
+                            ButtonBackground="{StaticResource BrushBlue}"/>
+                        <Controls:DahButton 
+                            x:Name="m_BtnTimeRange"
+                            Height="95"
+                            IsHitTestVisible="False"
+                            FireClickAtTouchDown="False"
+                            TextDe="Zeiträume"
+                            TextEn="Time Ranges"
+                            FontSize="23"
+                            ButtonBackground="{StaticResource BrushGrey}" />
+                        <Controls:DahButton 
+                            x:Name="m_BtnSimilarBiographies"
+                            Height="95"
+                            IsHitTestVisible="False"
+                            FireClickAtTouchDown="False"
+                            TextDe="Ähnliche Biographien"
+                            TextEn="Similar Biographies"
+                            FontSize="23"
+                            ButtonBackground="{StaticResource BrushRed}" />
+
+                        <TextBlock 
+                            Margin="20,0"
+                            VerticalAlignment="Center"
+                            Foreground="White"
+                            FontSize="50"
+                            FontFamily="Wingdings">
+                            à
+                        </TextBlock>
+
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            x:Name="m_TxtFilterName"
+                            Style="{StaticResource TextStyle_Default}">
+                        Auswanderung
+                        </TextBlock>
+                    </StackPanel>
+
+                    <TextBlock
+                        Margin="0,70,0,0"
+                        x:Name="m_TxtNoOneFound"
+                        Style="{StaticResource TextStyle_Default}">
+                        <wpfex:Localization.TextDe>                    
+                            keine Biographien gefunden
+                        </wpfex:Localization.TextDe>
+                        <wpfex:Localization.TextEn>                    
+                            no Biographies found
+                        </wpfex:Localization.TextEn>
+                            keine Biographien gefunden
+                    </TextBlock>
+                </StackPanel>
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <UniformGrid
+                        VerticalAlignment="Top"
+                        Columns="2"
+                        x:Name="m_PanelListPersons"
+                        Background="Black"
+                        Margin="0,30,0,0"
+                    />
+                    <UniformGrid
+                        VerticalAlignment="Top"
+                        Grid.Column="1"
+                        Columns="2"
+                        x:Name="m_PanelListItems"
+                        Background="Black"
+                        Margin="0,30,0,0"
+                    />
+
+                </Grid>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!--<Border
+            Background="Red" Margin="493,508,1168,145.667"/>
+        <Border
+            Background="Blue" Margin="752,644,1090,9.667"/>-->
+    </Grid>
+</UserControl>

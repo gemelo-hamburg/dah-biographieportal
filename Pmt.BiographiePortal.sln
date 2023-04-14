@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pmt.BiographiePortal", "Pmt.BiographiePortal\Pmt.BiographiePortal.csproj", "{A64DF776-FEE2-4776-B095-0DC875C203E2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pmt.BiographiePortal.Common", "Pmt.BiographiePortal.Common\Pmt.BiographiePortal.Common.csproj", "{A7554A06-FB06-4430-B89C-BBB761A349A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{2659814C-6384-4AD4-B21E-A44731AC5599}"
+	ProjectSection(SolutionItems) = preProject
+		Libraries\gemelo.ClosedXml.dll = Libraries\gemelo.ClosedXml.dll
+		Libraries\gemelo.Cms.dll = Libraries\gemelo.Cms.dll
+		Libraries\gemelo.Cms.Wpf.dll = Libraries\gemelo.Cms.Wpf.dll
+		Libraries\gemelo.Common.dll = Libraries\gemelo.Common.dll
+		Libraries\gemelo.Common.Exhibits.dll = Libraries\gemelo.Common.Exhibits.dll
+		Libraries\gemelo.Common.Wpf.dll = Libraries\gemelo.Common.Wpf.dll
+		Libraries\gemelo.Dah.Common.dll = Libraries\gemelo.Dah.Common.dll
+		Libraries\gemelo.Dah.Common.Wpf.dll = Libraries\gemelo.Dah.Common.Wpf.dll
+		Libraries\gemelo.FileUpdate.dll = Libraries\gemelo.FileUpdate.dll
+		Libraries\gemelo.Pmt.Common.dll = Libraries\gemelo.Pmt.Common.dll
+		Libraries\gemelo.Pmt.Common.Wpf.dll = Libraries\gemelo.Pmt.Common.Wpf.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A64DF776-FEE2-4776-B095-0DC875C203E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A64DF776-FEE2-4776-B095-0DC875C203E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A64DF776-FEE2-4776-B095-0DC875C203E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A64DF776-FEE2-4776-B095-0DC875C203E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7554A06-FB06-4430-B89C-BBB761A349A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7554A06-FB06-4430-B89C-BBB761A349A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7554A06-FB06-4430-B89C-BBB761A349A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7554A06-FB06-4430-B89C-BBB761A349A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9BA1EF43-B722-4515-AEE3-7F068E43F5DC}
+	EndGlobalSection
+EndGlobal
