@@ -1,0 +1,67 @@
+﻿<UserControl 
+    x:Class="Gemelo.Applications.Biographieportal.Controls.ContentDetails.HistoricBackgroundView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:Gemelo.Applications.Biographieportal.Controls.ContentDetails"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="845">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Styles/TextStyles.xaml" />
+                <ResourceDictionary Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Styles/Buttons.xaml" />
+                <ResourceDictionary Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="/gemelo.Pmt.BiographiePortal.Common;component/Resources/Styles/Borders.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style
+                x:Key="TextStyle_Text"
+                BasedOn="{StaticResource TextStyle_Default}"
+                TargetType="TextBlock" >
+                <Setter Property="TextWrapping" Value="Wrap" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="FontSize" Value="22" />
+                <Setter Property="LineHeight" Value="31" />
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+    <Grid>
+
+        <Border
+            Grid.RowSpan="2"
+            Style="{StaticResource BorderStyleContext}" />
+
+        <Grid
+            Margin="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                x:Name="m_TxtTitle"
+                FontSize="30"
+                Style="{StaticResource TextStyle_Default}" >
+                Titel
+            </TextBlock>
+
+
+            <TextBlock
+                Style="{StaticResource TextStyle_Text}"
+                Grid.Row="2"
+                x:Name="m_TxtText">
+                hier der tolle Textd
+            </TextBlock>
+
+
+        </Grid>
+    </Grid>
+
+</UserControl>
