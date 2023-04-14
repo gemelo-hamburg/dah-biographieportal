@@ -24,9 +24,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Code\Misc\**" />
     <Compile Remove="Resources\**" />
+    <EmbeddedResource Remove="Code\Misc\**" />
     <EmbeddedResource Remove="Resources\**" />
+    <None Remove="Code\Misc\**" />
     <None Remove="Resources\**" />
+    <Page Remove="Code\Misc\**" />
     <Page Remove="Resources\**" />
   </ItemGroup>
 
@@ -79,15 +83,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.101.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Pmt.BiographiePortal.Common\Pmt.BiographiePortal.Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Code\Misc\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>

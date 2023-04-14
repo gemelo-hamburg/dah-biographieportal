@@ -346,7 +346,6 @@ namespace Gemelo.Applications.Biographieportal.Code.Data
                     fiPreview = GetMediaFileInfo(ConstMissingImagePlaceHolder);
                 }
 
-
                 result.VideoPreview = fiPreview;
             }
 

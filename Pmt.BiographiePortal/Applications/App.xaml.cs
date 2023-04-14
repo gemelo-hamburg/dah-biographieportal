@@ -73,17 +73,9 @@ namespace Gemelo.Applications.Biographieportal.Applications
             "Weissenhof Grotesk"
         };
 
-        //TODO: SMTP-Account anlegen und Passwort eintragen
-        private const string ConstTraceSmtpServer = "smtp.gemelo.de";
-        private const string ConstTraceSmtpUser = "auswandererhaus-trace-send@gemelo.de";
-        private const string ConstTraceSmtpPassword = "79nygn18Psx)";
-        private const string ConstTraceSmtpSender = "auswandererhaus-trace-send@gemelo.de";
-        private const string ConstTraceSmtpRecipient = "auswandererhaus-trace-receive@gemelo.de";
-
         private const string ConstGlobalSettingsFilename = @"Data\GlobalSettings.json";
 
-
-        public const string ConstDataRootDirectoryName = "Data";
+        public new const string ConstDataRootDirectoryName = "Data";
         public const string ConstContentDataDirectoryName = "ContentData";
         public const string ConstMediaDirectoryName = "Media";
         public const string ConstContentDefinitionDirectoryName = "ContentDefinition";
@@ -131,8 +123,6 @@ namespace Gemelo.Applications.Biographieportal.Applications
         public override string StationID { get; protected set; } = ConstTraceCategory;
         public override string CmsStationName => ConstTraceCategory;
 
-        //public new MainWindow MainWindow { get; private set; }
-        //public TimeSpan RestartInterval { get; internal set; }
         public MainWindow ExhibitMainWindow => (MainWindow)base.MainWindow;
 
         public BiographyReader BiographyReader { get; private set; }
@@ -162,76 +152,11 @@ namespace Gemelo.Applications.Biographieportal.Applications
             Settings.AddAdditionalFonts(ConstAdditionalFonts);
             InitializeStartArguments();
 
-            InitDataStore();
+            InitializeDataStore();
 
             LocalizationExtensions.UseVisualTree = true;
             LocalizationExtensions.UseLogicalTree = true;
         }
-
-        protected override async Task UpdateStationDefinitionInternally()
-        {
-            TraceX.WriteInformational("UpdateStationDefinitionInternally", category: nameof(App));
-            string stationJsonFilePath =
-                Path.Combine(DataDirectoryPath, ConstStationDefinitionFilename);
-
-            //TODO: Löschen der StationDef rausnehmen wenn CMS läuft
-
-            //if (File.Exists(stationJsonFilePath))
-            //{
-            //    File.Delete(stationJsonFilePath);
-            //    await Task.Delay(500);
-            //}
-
-            if (!File.Exists(stationJsonFilePath))
-            {
-                StationDefinition = new BioportalStationDefinition();
-                StationDefinition.SaveToJsonFile(stationJsonFilePath);
-                await Task.Delay(250);
-            }
-
-            StationDefinition =
-                BioportalStationDefinition.LoadFromJsonFile(stationJsonFilePath);
-
-            InitializeDataPaths();
-
-            //CreateWindowViewModels();
-            //CreateEntryViewModels();
-
-            //AddDebugLog("Station Definition geladen");
-        }
-
-        private void InitDataStore()
-        {
-            BiographyStore = new BiographyStore();
-            BiographyReader = new BiographyReader();
-            BiographyReader.ReassignStore += BiographyReader_ReassignStore;
-        }
-
-        //        private void SetDefaultTraceMailSettings()
-        //        {
-        //            TraceX.WriteImportant("SetDefaultTraceMailSettings() ...", ConstTraceCategory);
-        //            TraceX.ApplicationName = ApplicationName;
-        //            //TraceX.SmtpServer = ConstTraceSmtpServer;
-        //            //TraceX.SmtpAuthUser = ConstTraceSmtpUser;
-        //            //TraceX.SmtpAuthPassword = ConstTraceSmtpPassword;
-        //            //TraceX.SmtpFrom = ConstTraceSmtpSender;
-        //            //TraceX.SmtpReceipientsInfo = new string[] { ConstTraceSmtpRecipient };
-        //            //TraceX.SmtpReceipientsWarning = new string[] { ConstTraceSmtpRecipient };
-        //            //TraceX.SmtpReceipientsException = new string[] { ConstTraceSmtpRecipient };
-        //#if (DEBUG)
-        //            //TraceX.SmtpSendTraceMails = false;
-        //#else
-        //            //TraceX.SmtpSendTraceMails = true;
-        //#endif
-        //}
-
-        #endregion Konstruktur und Initialisierung
-
-        #region öffentliche Methoden
-
-        #endregion öffentliche Methoden
-
-        #region protected Methoden
 
         private void InitializeStartArguments()
         {
@@ -275,38 +200,82 @@ namespace Gemelo.Applications.Biographieportal.Applications
 
         }
 
-        private string GetPathFromCommandLineArg(string arg)
+        private void InitializeDataStore()
         {
-            int firstQuationMark = arg.IndexOf(':');
-            if (firstQuationMark > 0)
-            {
-                string path = arg.SecureSubstring(firstQuationMark + 1);
-                if (path.StartsWith("\"")) path = path.SecureSubstring(1);
-                if (path.EndsWith("\"")) path = path.SecureSubstring(0, path.Length - 1);
-                return path;
-            }
-            else return null;
+            BiographyStore = new BiographyStore();
+            BiographyReader = new BiographyReader();
+            BiographyReader.ReassignStore += BiographyReader_ReassignStore;
         }
 
-        //protected override void InitializeBeforeMainWindow()
-        //{
-        //    base.InitializeBeforeMainWindow();
-        //    try
-        //    {
-        //        //TouchButton.FireClickAtTouchDownGlobal = true;
-        //    }
-        //    catch (Exception exp)
-        //    {
-        //        TraceX.WriteException($"BeforeMainWindowCreate", $"{nameof(App)}", exception: exp);
-        //        throw;
-        //    }
-        //}
 
-        //protected override ExhibitMainWindow CreateMainWindow()
-        //{
-        //    MainWindow = new MainWindow();
-        //    return MainWindow;
-        //}
+        private void InitializeProperties()
+        {
+            RestartTimer.Interval = StationDefinition.RestartInterval;
+            WaitIfContentReadingError = StationDefinition.WaitIfContentReadingError;
+            CategorySliderTimeout = StationDefinition.CategorySliderTimeout;
+            CheckNewContentInterval = StationDefinition.CheckNewContentInterval;
+
+            m_TimeStopwatch = new Stopwatch();
+            m_TimeStopwatch.Start();
+        }
+
+        private void InitializeDataPaths()
+        {
+            if (StationDefinition != null)
+            {
+                if (string.IsNullOrWhiteSpace(VisitorMessagesPath)) VisitorMessagesPath = StationDefinition.VisitorMessagesPath;
+                if (string.IsNullOrWhiteSpace(ServerContentDataPath)) ServerContentDataPath = StationDefinition.ContentDataPath;
+            }
+
+            LocalContentDataPath = EnsureAppDataDirectory(ConstContentDataDirectoryName).FullName;
+
+            TraceX.WriteImportant("VisitorMessagesPath", category: "App", arguments: VisitorMessagesPath); // neu ab 1.302
+            TraceX.WriteImportant("LocalContentDataPath", category: "App", arguments: LocalContentDataPath); // neu ab 1.302
+            TraceX.WriteImportant("ServerContentDataPath", category: "App", arguments: ServerContentDataPath); // neu ab 1.302
+        }
+
+        private void InitializeContentData()
+        {
+            ContentAutoUpdater = new ContentAutoUpdater();
+            ContentAutoUpdater.NewFilesFound += ContentAutoUpdater_NewFilesFound;
+            ContentAutoUpdater.FileScanFinished += ContentAutoUpdater_FileScanFinished;
+            ContentAutoUpdater.StartTask();
+        }
+
+
+        #endregion Konstruktur und Initialisierung
+
+        #region öffentliche Methoden
+
+        public DirectoryInfo EnsureAppDataDirectory(string folderName)
+        {
+            return EnsureDirectory(Directories.AppDataDirectory, folderName);
+        }
+
+        public DirectoryInfo EnsureLocalContentDataDirectory(string folderName)
+        {
+            return EnsureDirectory(LocalContentDataPath, folderName);
+        }
+
+        public DirectoryInfo EnsureDirectory(DirectoryInfo baseFolder, string folderName)
+        {
+            return EnsureDirectory(baseFolder.FullName, folderName);
+        }
+
+        public static DirectoryInfo EnsureDirectory(string baseFolder, string folderName)
+        {
+            DirectoryInfo result = new DirectoryInfo(Path.Combine(baseFolder, folderName));
+            if (!result.Exists)
+            {
+                result.Create();
+                result.Refresh();
+            }
+            return result;
+        }
+
+        #endregion öffentliche Methoden
+
+        #region protected Methoden
 
         protected override ExhibitMainWindow CreateMainWindow()
         {
@@ -315,10 +284,25 @@ namespace Gemelo.Applications.Biographieportal.Applications
             return result;
         }
 
-
-        private void MainWindows_Closed(object sender, EventArgs e)
+        protected override async Task UpdateStationDefinitionInternally()
         {
-            IsMainWindowClosed = true;
+            TraceX.WriteInformational("UpdateStationDefinitionInternally", category: nameof(App));
+            string stationJsonFilePath =
+                Path.Combine(DataDirectoryPath, ConstStationDefinitionFilename);
+
+            if (!File.Exists(stationJsonFilePath))
+            {
+                StationDefinition = new BioportalStationDefinition();
+                StationDefinition.SaveToJsonFile(stationJsonFilePath);
+                await Task.Delay(250);
+            }
+
+            StationDefinition =
+                BioportalStationDefinition.LoadFromJsonFile(stationJsonFilePath);
+
+            InitializeDataPaths();
+
+            TraceX.WriteInformational("UpdateStationDefinitionInternally finished", category: nameof(App));
         }
 
         protected override async Task InitializeAfterMainWindowAsync()
@@ -338,73 +322,7 @@ namespace Gemelo.Applications.Biographieportal.Applications
             //ServerContentDataPath = @"C:\+dev\Expo\Allgemein\G0498 Biographieportal\ContentData";
 #endif
 
-            //SetDefaultTraceMailSettings();
-            //LocalizationString.DefaultLanguage = DefaultLanguage;
-
-            //TextBlockExtension.UseRecursiveVersion = true;
-
             InitializeContentData();
-        }
-
-        private void InitializeContentData()
-        {
-            ContentAutoUpdater = new ContentAutoUpdater();
-            ContentAutoUpdater.NewFilesFound += ContentAutoUpdater_NewFilesFound;
-            ContentAutoUpdater.FileScanFinished += ContentAutoUpdater_FileScanFinished;
-            //ReadContent();
-            ContentAutoUpdater.StartTask();
-        }
-
-        private void InitializeDataPaths()
-        {
-            if (StationDefinition != null)
-            {
-                if (string.IsNullOrWhiteSpace(VisitorMessagesPath)) VisitorMessagesPath = StationDefinition.VisitorMessagesPath;
-                if (string.IsNullOrWhiteSpace(ServerContentDataPath)) ServerContentDataPath = StationDefinition.ContentDataPath;
-            }
-
-            LocalContentDataPath = EnsureAppDataDirectory(ConstContentDataDirectoryName).FullName;
-
-            TraceX.WriteImportant("VisitorMessagesPath", category: "App", arguments: VisitorMessagesPath); // neu ab 1.302
-            TraceX.WriteImportant("LocalContentDataPath", category: "App", arguments: LocalContentDataPath); // neu ab 1.302
-            TraceX.WriteImportant("ServerContentDataPath", category: "App", arguments: ServerContentDataPath); // neu ab 1.302
-        }
-
-        public DirectoryInfo EnsureAppDataDirectory(string folderName)
-        {
-            return EnsureDirectory(Directories.AppDataDirectory, folderName);
-        }
-
-        public DirectoryInfo EnsureLocalContentDataDirectory(string folderName)
-        {
-            return EnsureDirectory(LocalContentDataPath, folderName);
-        }
-
-        private DirectoryInfo EnsureDirectory(DirectoryInfo baseFolder, string folderName)
-        {
-            return EnsureDirectory(baseFolder.FullName, folderName);
-        }
-
-        private DirectoryInfo EnsureDirectory(string baseFolder, string folderName)
-        {
-            DirectoryInfo result = new DirectoryInfo(Path.Combine(baseFolder, folderName));
-            if (!result.Exists)
-            {
-                result.Create();
-                result.Refresh();
-            }
-            return result;
-        }
-
-        private void InitializeProperties()
-        {
-            RestartTimer.Interval = StationDefinition.RestartInterval;
-            WaitIfContentReadingError = StationDefinition.WaitIfContentReadingError;
-            CategorySliderTimeout = StationDefinition.CategorySliderTimeout;
-            CheckNewContentInterval = StationDefinition.CheckNewContentInterval;
-
-            m_TimeStopwatch = new Stopwatch();
-            m_TimeStopwatch.Start();
         }
 
         #endregion protected Methoden
@@ -413,27 +331,31 @@ namespace Gemelo.Applications.Biographieportal.Applications
 
         private async Task UpdateDataStore()
         {
-            //DirectoryInfo dirMedia = new DirectoryInfo(Path.Combine(Directories.ApplicationProgramDirectory, @"Data\Media"));
-            //DirectoryInfo dirContentDef = new DirectoryInfo(Path.Combine(Directories.ApplicationProgramDirectory, @"Data\ContentDefinition"));
+            try
+            {
+                TraceX.WriteVerbose("UpdateDataStore Start", arguments: $"", category: nameof(App));
+                DirectoryInfo dirMedia = EnsureLocalContentDataDirectory(ConstMediaDirectoryName);
+                DirectoryInfo dirContentDef = EnsureLocalContentDataDirectory(ConstContentDefinitionDirectoryName);
 
-            DirectoryInfo dirMedia = EnsureLocalContentDataDirectory(ConstMediaDirectoryName);// new DirectoryInfo(Path.Combine(LocalContentDataPath, @"Media"));
-            DirectoryInfo dirContentDef = EnsureLocalContentDataDirectory(ConstContentDefinitionDirectoryName); //new DirectoryInfo(Path.Combine(LocalContentDataPath, @"ContentDefinition"));
-
-            BiographyReader.Store = new BiographyStore();
-            BiographyReader.ReadingFinished += BiographyReader_ReadingFinished;
-            await BiographyReader.AnalyseMediaDirectory(dirMedia);
-            BiographyReader.OpenNewestAsync(dirContentDef);
+                BiographyReader.Store = new BiographyStore();
+                BiographyReader.Progress += BiographyReader_Progress;
+                BiographyReader.ReadingFinished += BiographyReader_ReadingFinished;
+                await BiographyReader.AnalyseMediaDirectory(dirMedia);
+                TraceX.WriteVerbose("UpdateDataStore Call BiographyReader.OpenNewestAsync", arguments: $"", category: nameof(App));
+                BiographyReader.OpenNewestAsync(dirContentDef);
+                TraceX.WriteVerbose("UpdateDataStore finished", category: nameof(App));
+            }
+            catch (Exception ex)
+            {
+                TraceX.WriteException("Exception at UpdateDataStore ", arguments: $"", category: nameof(App), exception: ex);
+                Debugger.Break();
+            }
         }
 
-        private void BiographyReader_ReadingFinished(object sender, Components.ClosedXml.Code.EventArguments.ReadingFinishedEventArgs e)
+        private void BiographyReaderFinished()
         {
+            TraceX.WriteVerbose("BiographyReader_ReadingFinished", category: nameof(App));
             DirectoryInfo dirContentDef = new DirectoryInfo(Path.Combine(LocalContentDataPath, @"ContentDefinition"));
-
-            //if (CreateJson)
-            //{
-            //    FileInfo fileJson = new FileInfo(Path.Combine(LocalContentDataPath, "ContentDefinition.json"));
-            //    BiographyStore.SaveToJsonFile(fileJson.FullName);
-            //}
 
             if (CreateJsonForWebsite)
             {
@@ -447,15 +369,8 @@ namespace Gemelo.Applications.Biographieportal.Applications
 
                 Process.Start("explorer.exe", arguments: LocalContentDataPath);
             }
+            TraceX.WriteVerbose("BiographyReader_ReadingFinished finished", category: nameof(App));
         }
-
-
-        //private void ReadContent()
-        //{
-        //    DirectoryInfo contentDir = new DirectoryInfo(Path.Combine(Directories.ApplicationProgramDirectory, @"Data\ContentDefintion"));
-        //    BiographyReader.OpenNewestAsync(contentDir);
-        //    //BiographyReader.Open(file);
-        //}
 
 
         #endregion private Methoden
@@ -471,7 +386,6 @@ namespace Gemelo.Applications.Biographieportal.Applications
             }
         }
 
-
         private void ContentAutoUpdater_NewFilesFound(object sender, EventArgs e)
         {
             if (!m_ContentAutoUpdater_FirstFileScanFinished)
@@ -483,6 +397,22 @@ namespace Gemelo.Applications.Biographieportal.Applications
         private void BiographyReader_ReassignStore(object sender, EventArgs e)
         {
             BiographyStore = BiographyReader.Store;
+        }
+
+        private void BiographyReader_Progress(object sender, Components.ClosedXml.Code.EventArguments.ProgressEventArgs e)
+        {
+            TraceX.WriteVerbose("BiographyReader_Progress", arguments: $"Message:{e?.Message},Index:{e?.Index},ID:{e?.Id}", category: nameof(App));
+        }
+
+        private void BiographyReader_ReadingFinished(object sender, Components.ClosedXml.Code.EventArguments.ReadingFinishedEventArgs e)
+        {
+            BiographyReaderFinished();
+        }
+
+
+        private void MainWindows_Closed(object sender, EventArgs e)
+        {
+            IsMainWindowClosed = true;
         }
 
 
