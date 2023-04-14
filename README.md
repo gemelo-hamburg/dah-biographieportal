@@ -19,7 +19,7 @@
 
 # Kurzbeschreibung
 
-Diese auf Basis von c#/WPF/XAML errichtete .net 4.8 Applikation ermöglicht dem *Deutschen Auswandererhaus* die Darstellung eines Multimedia-Exponats mit folgendem Zweck:
+Diese auf Basis von c#/WPF/XAML errichtete .net core 6 Applikation ermöglicht dem *Deutschen Auswandererhaus* die Darstellung eines Multimedia-Exponats mit folgendem Zweck:
 
 Anhand von Fotos, Texten und Videos können die Nutzer hier einen Einblick in ganz persönliche Aus- und Einwanderungsgeschichten gewinnen.
 			
@@ -39,7 +39,7 @@ Weitere Informationen: [museum4punkt0](www.museum4punkt0.de)
 # Installation
 
 ## Hardware / Betriebssystem
-Die Software läuft auf einem handelsüblichen PC unter dem Betriebssystem Microsoft Windows 10. Sie benötigt das Microsoft .net Framework 4.8. An die Hardware werden keine speziellen Anforderungen gestellt, am rechenintensivsten ist die Darstellung von Videos.
+Die Software läuft auf einem handelsüblichen PC unter dem Betriebssystem Microsoft Windows 10. Sie benötigt das Microsoft .net core 6.0. An die Hardware werden keine speziellen Anforderungen gestellt, am rechenintensivsten ist die Darstellung von Videos.
 
 ## Schriften
 Folgende Schriftarten müssen auf dem PC installiert sein:
