@@ -19,7 +19,7 @@
 
 # Kurzbeschreibung
 
-Diese auf Basis von c#/WPF/XAML errichtete .net core 6.0 Applikation ermöglicht dem *Deutschen Auswandererhaus* die Darstellung eines Multimedia-Exponats mit folgendem Zweck:
+Diese auf Basis von c#/WPF/XAML errichtete Microsoft .net core 6.0 Applikation ermöglicht dem *Deutschen Auswandererhaus* die Darstellung eines Multimedia-Exponats mit folgendem Zweck:
 
 Anhand von Fotos, Texten und Videos können die Nutzer hier einen Einblick in ganz persönliche Aus- und Einwanderungsgeschichten gewinnen.
 			
