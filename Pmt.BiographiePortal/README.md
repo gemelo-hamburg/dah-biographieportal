@@ -49,10 +49,16 @@ Folgende Schriftarten müssen auf dem PC installiert sein:
 jeweils mit den Schriftschnitten Bold, Italic und Light.
 
 ## Einstellungen
-In der [.settings Datei](Properties/Settings.settings) können folgende Einstellungen vorgenommen werden:
+In der [Einstellungs Datei](Data/Biographieportal.json) können folgende Einstellungen vorgenommen werden:
 
-* `RestartInteval`
+* `RestartInterval`
 Intervall als Timespan, nach der das Exponat bei Nichtbenutzung in den Timeout geht und die Startseite anzeigt.
+
+* `WaitIfContentReadingError`
+Flag (bool), welches gesetzt werden kann, um in der Phase der Content Erstellung Fehler besser bemerken zu können.
+
+* `CheckNewContentInterval`
+Zeitspanne (Timespan), nach der nach aktualisierten Inhalten gesucht wird.
 
 * `VisitorMessagesPath`
 Pfad zu dem geschützten Datenbereich, unter dem die Geschichten der Besucher abgelegt werden.
